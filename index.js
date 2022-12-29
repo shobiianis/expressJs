@@ -9,4 +9,10 @@ app.get("/about",(req,res)=>{
 res.sendFile(`${pathForIndexFile}/about.html`)
 
 })
+
+// ------------------This following code will be for if search bar has name other than listed page----
+app.get("*",(req,res)=>{
+    res.sendFile(`${pathForIndexFile}/nopage.html`)
+    
+    })
 app.listen(8001);
