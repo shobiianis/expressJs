@@ -1,17 +1,8 @@
 const express=require("express");
+const path=require("path");
+
 const app=express();
+const pathForIndexFile=path.join(__dirname,"public");
 
-app.get("/home",(req,res)=>{
-
-res.send("this is home page")
-})
-
-app.get("/",(req,res)=>{
-   res.send("This is index page")
-})
-
-app.get("help",(req,res)=>{
-    res.send("This is help page")
- })
-
-app.listen(12000)
+app.use(express.static(pathForIndexFile));
+app.listen(8001);
